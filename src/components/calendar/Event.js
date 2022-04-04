@@ -13,7 +13,7 @@ import AdapterMoment from "@mui/lab/AdapterMoment";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "@mui/lab/DatePicker";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const style = {
   position: "absolute",
@@ -28,10 +28,12 @@ const style = {
 };
 
 const Event = ({ openModal, setOpenModal, selectedDay }) => {
-  const dayFormated = selectedDay.format("MMM DD, YYYY");
-  const dayFormatedUC = dayFormated[0].toUpperCase() + dayFormated.slice(1);
+  const [day, setDay] = useState();
 
-  const [day, setDay] = useState(selectedDay);
+  useEffect(() => {
+    setDay(selectedDay);
+  }, [selectedDay]);
+
   const [type, setType] = useState("rca");
   const [event, setEvent] = useState("");
 

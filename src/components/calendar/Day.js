@@ -41,7 +41,7 @@ const Day = ({ day, setSelectedDay, selectedDay, value }) => {
       >
         <Box
           sx={{
-            height: "100px",
+            height: "75px",
             cursor: "pointer",
             backgroundColor: nBusinessDay ? "#A0A0A0" : "#808080",
             "&:hover": {

@@ -36,6 +36,7 @@ const Month = ({
           startWeek={date.add(7 * i, "day")}
           value={value}
           occurrencesAdapt={occurrencesAdapt}
+          setOpenModal={setOpenModal}
         />
       );
     }

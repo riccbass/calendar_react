@@ -19,7 +19,14 @@ const circleStyle = {
   display: "flex",
 };
 
-const Day = ({ day, setSelectedDay, selectedDay, value, occurrencesAdapt }) => {
+const Day = ({
+  day,
+  setSelectedDay,
+  selectedDay,
+  value,
+  occurrencesAdapt,
+  setOpenModal,
+}) => {
   const [clicked, setClicked] = useState(false);
 
   const nBusinessDay = day.isoWeekday() >= 6;
@@ -69,8 +76,14 @@ const Day = ({ day, setSelectedDay, selectedDay, value, occurrencesAdapt }) => {
           {occurrencesAdapt.map((step, index) =>
             step.momentObj.isSame(day, "day") ? (
               <Box sx={circleStyle}>
-                <CircleIcon sx={{ fontSize: 15, color: color(step.label) }} />
-                <CircleIcon sx={{ fontSize: 15, color: color(step.label) }} />
+                <CircleIcon
+                  onClick={(e) => setOpenModal(true)}
+                  sx={{ fontSize: 15, color: color(step.label) }}
+                />
+                <CircleIcon
+                  onClick={(e) => setOpenModal(true)}
+                  sx={{ fontSize: 15, color: color(step.label) }}
+                />
               </Box>
             ) : null
           )}

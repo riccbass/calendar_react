@@ -7,6 +7,7 @@ const Week = ({
   selectedDay,
   value,
   occurrencesAdapt,
+  setOpenModal,
 }) => {
   return (
     <Grid container spacing={0}>
@@ -16,6 +17,7 @@ const Week = ({
         selectedDay={selectedDay}
         value={value}
         occurrencesAdapt={occurrencesAdapt}
+        setOpenModal={setOpenModal}
       />
       <Day
         day={startWeek.clone().add(1, "day")}
@@ -23,6 +25,7 @@ const Week = ({
         selectedDay={selectedDay}
         value={value}
         occurrencesAdapt={occurrencesAdapt}
+        setOpenModal={setOpenModal}
       />
       <Day
         day={startWeek.clone().add(2, "day")}
@@ -30,6 +33,7 @@ const Week = ({
         selectedDay={selectedDay}
         value={value}
         occurrencesAdapt={occurrencesAdapt}
+        setOpenModal={setOpenModal}
       />
       <Day
         day={startWeek.clone().add(3, "day")}
@@ -37,6 +41,7 @@ const Week = ({
         selectedDay={selectedDay}
         value={value}
         occurrencesAdapt={occurrencesAdapt}
+        setOpenModal={setOpenModal}
       />
       <Day
         day={startWeek.clone().add(4, "day")}
@@ -44,6 +49,7 @@ const Week = ({
         selectedDay={selectedDay}
         value={value}
         occurrencesAdapt={occurrencesAdapt}
+        setOpenModal={setOpenModal}
       />
       <Day
         day={startWeek.clone().add(5, "day")}
@@ -51,6 +57,7 @@ const Week = ({
         selectedDay={selectedDay}
         value={value}
         occurrencesAdapt={occurrencesAdapt}
+        setOpenModal={setOpenModal}
       />
       <Day
         day={startWeek.clone().add(6, "day")}
@@ -58,6 +65,7 @@ const Week = ({
         selectedDay={selectedDay}
         value={value}
         occurrencesAdapt={occurrencesAdapt}
+        setOpenModal={setOpenModal}
       />
     </Grid>
   );

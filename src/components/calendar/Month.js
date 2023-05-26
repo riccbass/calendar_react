@@ -20,6 +20,7 @@ const Month = ({
   selectedDay,
   setOpenModal,
   m1,
+  occurrencesAdapt,
 }) => {
   const startDay = value.clone().startOf("month").startOf("week");
 
@@ -34,6 +35,7 @@ const Month = ({
           selectedDay={selectedDay}
           startWeek={date.add(7 * i, "day")}
           value={value}
+          occurrencesAdapt={occurrencesAdapt}
         />
       );
     }

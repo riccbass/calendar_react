@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
 import CircleIcon from "@mui/icons-material/Circle";
+import color from "./service";
 
 const centerStyle = {
   alignItems: "center",
@@ -18,14 +19,13 @@ const circleStyle = {
   display: "flex",
 };
 
-const Day = ({ day, setSelectedDay, selectedDay, value }) => {
-  // value.isSame(new Date(), "month")
-
+const Day = ({ day, setSelectedDay, selectedDay, value, occurrencesAdapt }) => {
   const [clicked, setClicked] = useState(false);
 
   const nBusinessDay = day.isoWeekday() >= 6;
 
   const onClick = (e) => {
+    console.log(day);
     setSelectedDay(day);
     setClicked(true);
   };
@@ -66,9 +66,14 @@ const Day = ({ day, setSelectedDay, selectedDay, value }) => {
               </Typography>
             </Box>
           </Box>
-          <Box sx={circleStyle}>
-            <CircleIcon sx={{ fontSize: 15, color: "blue" }} />
-          </Box>
+          {occurrencesAdapt.map((step, index) =>
+            step.momentObj.isSame(day, "day") ? (
+              <Box sx={circleStyle}>
+                <CircleIcon sx={{ fontSize: 15, color: color(step.label) }} />
+                <CircleIcon sx={{ fontSize: 15, color: color(step.label) }} />
+              </Box>
+            ) : null
+          )}
         </Box>
       </Grid>
     );

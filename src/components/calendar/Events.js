@@ -6,25 +6,10 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Box from "@mui/material/Box";
 
-const steps = [
-  {
-    label: "Select campaign settings",
-    description: `For each ad campaign`,
-  },
-  {
-    label: "Create an ad group",
-    description:
-      "An ad group contains one or more ads which target a shared set of keywords.",
-  },
-  {
-    label: "Create an ad",
-    description: `Try out different`,
-  },
-];
-
 const drawerWidth = 240;
 
-const Events = ({ value }) => {
+const Events = ({ value, occurrencesAdapt }) => {
+  console.log(occurrencesAdapt);
   const dayFormated = value.format("MMM DD, YYYY");
   const dayFormatedUC = dayFormated[0].toUpperCase() + dayFormated.slice(1);
 
@@ -49,19 +34,23 @@ const Events = ({ value }) => {
           <Grid justifyContent="center" alignItems="center" display="flex">
             <Box sx={{ maxWidth: 400 }}>
               <Stepper orientation="vertical">
-                {steps.map((step, index) => (
-                  <Step
-                    key={step.label}
-                    active={true}
-                    sx={{
-                      "& .MuiStepLabel-root .Mui-active": {
-                        color: "secondary.main", // circle color (ACTIVE)
-                      },
-                    }}
-                  >
-                    <StepLabel>{step.label}</StepLabel>
-                  </Step>
-                ))}
+                {occurrencesAdapt.map((step, index) =>
+                  step.momentObj.isSameOrAfter(value) ? (
+                    <Step
+                      key={step.key}
+                      active={true}
+                      sx={{
+                        "& .MuiStepLabel-root .Mui-active": {
+                          color: "secondary.main", // circle color (ACTIVE)
+                        },
+                      }}
+                    >
+                      <StepLabel>
+                        {step.momentObj.format("MMM DD, YYYY")}
+                      </StepLabel>
+                    </Step>
+                  ) : null
+                )}
               </Stepper>
             </Box>
           </Grid>

@@ -1,7 +1,13 @@
 import Grid from "@mui/material/Grid";
 import Day from "./Day";
 
-const Week = ({ startWeek, setSelectedDay, selectedDay, value }) => {
+const Week = ({
+  startWeek,
+  setSelectedDay,
+  selectedDay,
+  value,
+  occurrencesAdapt,
+}) => {
   return (
     <Grid container spacing={0}>
       <Day
@@ -9,42 +15,49 @@ const Week = ({ startWeek, setSelectedDay, selectedDay, value }) => {
         setSelectedDay={setSelectedDay}
         selectedDay={selectedDay}
         value={value}
+        occurrencesAdapt={occurrencesAdapt}
       />
       <Day
         day={startWeek.clone().add(1, "day")}
         setSelectedDay={setSelectedDay}
         selectedDay={selectedDay}
         value={value}
+        occurrencesAdapt={occurrencesAdapt}
       />
       <Day
         day={startWeek.clone().add(2, "day")}
         setSelectedDay={setSelectedDay}
         selectedDay={selectedDay}
         value={value}
+        occurrencesAdapt={occurrencesAdapt}
       />
       <Day
         day={startWeek.clone().add(3, "day")}
         setSelectedDay={setSelectedDay}
         selectedDay={selectedDay}
         value={value}
+        occurrencesAdapt={occurrencesAdapt}
       />
       <Day
         day={startWeek.clone().add(4, "day")}
         setSelectedDay={setSelectedDay}
         selectedDay={selectedDay}
         value={value}
+        occurrencesAdapt={occurrencesAdapt}
       />
       <Day
         day={startWeek.clone().add(5, "day")}
         setSelectedDay={setSelectedDay}
         selectedDay={selectedDay}
         value={value}
+        occurrencesAdapt={occurrencesAdapt}
       />
       <Day
         day={startWeek.clone().add(6, "day")}
         setSelectedDay={setSelectedDay}
         selectedDay={selectedDay}
         value={value}
+        occurrencesAdapt={occurrencesAdapt}
       />
     </Grid>
   );

@@ -27,15 +27,21 @@ const style = {
   p: 4,
 };
 
-const Event = ({ openModal, setOpenModal, selectedDay }) => {
+const Event = ({
+  openModal,
+  setOpenModal,
+  selectedDay,
+  isEdit,
+  eventName,
+  setEventName,
+  type,
+  setType,
+}) => {
   const [day, setDay] = useState();
 
   useEffect(() => {
     setDay(selectedDay);
   }, [selectedDay]);
-
-  const [type, setType] = useState("rca");
-  const [event, setEvent] = useState("");
 
   const [eventWarning, setEventWarning] = useState(false);
 
@@ -66,9 +72,10 @@ const Event = ({ openModal, setOpenModal, selectedDay }) => {
               variant="outlined"
               fullWidth
               helperText={eventWarning ? "Campo obrigatório" : " "}
-              value={event ?? ""}
+              // value={eventName ?? ""}
+              value={eventName ?? ""}
               onChange={(e) => {
-                setEvent(e.target.value);
+                setEventName(e.target.value);
               }}
             />
           </Grid>
@@ -130,7 +137,7 @@ const Event = ({ openModal, setOpenModal, selectedDay }) => {
 
           <Grid item xs={6}>
             <Button variant="contained" onClick={(e) => onSubmit(e)}>
-              Adicionar
+              {isEdit ? "Editar" : "Adicionar"}
             </Button>
           </Grid>
           <Grid item xs={6}>

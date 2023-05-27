@@ -9,7 +9,6 @@ import Box from "@mui/material/Box";
 const drawerWidth = 240;
 
 const Events = ({ value, occurrencesAdapt }) => {
-  console.log(occurrencesAdapt);
   const dayFormated = value.format("MMM DD, YYYY");
   const dayFormatedUC = dayFormated[0].toUpperCase() + dayFormated.slice(1);
 
@@ -37,7 +36,7 @@ const Events = ({ value, occurrencesAdapt }) => {
                 {occurrencesAdapt.map((step, index) =>
                   step.momentObj.isSameOrAfter(value) ? (
                     <Step
-                      key={step.key}
+                      key={index}
                       active={true}
                       sx={{
                         "& .MuiStepLabel-root .Mui-active": {

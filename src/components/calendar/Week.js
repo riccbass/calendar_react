@@ -8,6 +8,9 @@ const Week = ({
   value,
   occurrencesAdapt,
   setOpenModal,
+  setIsEdit,
+  setEventName,
+  setType,
 }) => {
   return (
     <Grid container spacing={0}>
@@ -18,6 +21,9 @@ const Week = ({
         value={value}
         occurrencesAdapt={occurrencesAdapt}
         setOpenModal={setOpenModal}
+        setIsEdit={setIsEdit}
+        setEventName={setEventName}
+        setType={setType}
       />
       <Day
         day={startWeek.clone().add(1, "day")}
@@ -26,6 +32,9 @@ const Week = ({
         value={value}
         occurrencesAdapt={occurrencesAdapt}
         setOpenModal={setOpenModal}
+        setIsEdit={setIsEdit}
+        setEventName={setEventName}
+        setType={setType}
       />
       <Day
         day={startWeek.clone().add(2, "day")}
@@ -34,6 +43,9 @@ const Week = ({
         value={value}
         occurrencesAdapt={occurrencesAdapt}
         setOpenModal={setOpenModal}
+        setIsEdit={setIsEdit}
+        setEventName={setEventName}
+        setType={setType}
       />
       <Day
         day={startWeek.clone().add(3, "day")}
@@ -42,6 +54,9 @@ const Week = ({
         value={value}
         occurrencesAdapt={occurrencesAdapt}
         setOpenModal={setOpenModal}
+        setIsEdit={setIsEdit}
+        setEventName={setEventName}
+        setType={setType}
       />
       <Day
         day={startWeek.clone().add(4, "day")}
@@ -50,6 +65,9 @@ const Week = ({
         value={value}
         occurrencesAdapt={occurrencesAdapt}
         setOpenModal={setOpenModal}
+        setIsEdit={setIsEdit}
+        setEventName={setEventName}
+        setType={setType}
       />
       <Day
         day={startWeek.clone().add(5, "day")}
@@ -58,6 +76,9 @@ const Week = ({
         value={value}
         occurrencesAdapt={occurrencesAdapt}
         setOpenModal={setOpenModal}
+        setIsEdit={setIsEdit}
+        setEventName={setEventName}
+        setType={setType}
       />
       <Day
         day={startWeek.clone().add(6, "day")}
@@ -66,6 +87,9 @@ const Week = ({
         value={value}
         occurrencesAdapt={occurrencesAdapt}
         setOpenModal={setOpenModal}
+        setIsEdit={setIsEdit}
+        setEventName={setEventName}
+        setType={setType}
       />
     </Grid>
   );

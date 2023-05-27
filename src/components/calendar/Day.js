@@ -26,15 +26,24 @@ const Day = ({
   value,
   occurrencesAdapt,
   setOpenModal,
+  setIsEdit,
+  setEventName,
+  setType,
 }) => {
   const [clicked, setClicked] = useState(false);
 
   const nBusinessDay = day.isoWeekday() >= 6;
 
   const onClick = (e) => {
-    console.log(day);
     setSelectedDay(day);
     setClicked(true);
+  };
+
+  const onClickOccurence = (event) => {
+    setOpenModal(true);
+    setIsEdit(true);
+    setEventName(event.label);
+    setType(event.type);
   };
 
   if (day.isSame(value, "month")) {
@@ -73,20 +82,16 @@ const Day = ({
               </Typography>
             </Box>
           </Box>
-          {occurrencesAdapt.map((step, index) =>
-            step.momentObj.isSame(day, "day") ? (
-              <Box sx={circleStyle}>
+          <Box sx={circleStyle}>
+            {occurrencesAdapt.map((step, index) =>
+              step.momentObj.isSame(day, "day") ? (
                 <CircleIcon
-                  onClick={(e) => setOpenModal(true)}
-                  sx={{ fontSize: 15, color: color(step.label) }}
+                  onClick={(e) => onClickOccurence(step)}
+                  sx={{ fontSize: 15, color: color(step.type) }}
                 />
-                <CircleIcon
-                  onClick={(e) => setOpenModal(true)}
-                  sx={{ fontSize: 15, color: color(step.label) }}
-                />
-              </Box>
-            ) : null
-          )}
+              ) : null
+            )}
+          </Box>
         </Box>
       </Grid>
     );

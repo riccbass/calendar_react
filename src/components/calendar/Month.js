@@ -21,6 +21,9 @@ const Month = ({
   setOpenModal,
   m1,
   occurrencesAdapt,
+  setIsEdit,
+  setEventName,
+  setType,
 }) => {
   const startDay = value.clone().startOf("month").startOf("week");
 
@@ -37,6 +40,9 @@ const Month = ({
           value={value}
           occurrencesAdapt={occurrencesAdapt}
           setOpenModal={setOpenModal}
+          setIsEdit={setIsEdit}
+          setEventName={setEventName}
+          setType={setType}
         />
       );
     }
@@ -49,6 +55,13 @@ const Month = ({
 
   const nextMonth = () => {
     setValue(value.clone().add(1, "month"));
+  };
+
+  const onClick = (e) => {
+    setOpenModal(true);
+    setIsEdit(false);
+    setEventName("");
+    setType("rca");
   };
 
   const monthYear = value.format("MMM/YYYY");
@@ -70,7 +83,7 @@ const Month = ({
             <ArrowForwardIosIcon onClick={(e) => nextMonth()} />
           ) : (
             <Tooltip title="Adicionar Evento">
-              <EventIcon onClick={(e) => setOpenModal(true)} />
+              <EventIcon onClick={(e) => onClick(e)} />
             </Tooltip>
           )}
         </Grid>

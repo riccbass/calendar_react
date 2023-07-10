@@ -1,85 +1,36 @@
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 
+const cssWeekDay = {
+  justifyContent: "center",
+  alignItems: "center",
+  display: "flex",
+  fontFamily: "Arial, Helvetica, sans-serif",
+};
+
 const Matrix = () => {
   return (
     <Grid container spacing={0}>
       <Grid item xs={12 / 7}>
-        <Box
-          sx={{
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-          }}
-        >
-          Seg
-        </Box>
+        <Box sx={cssWeekDay}>Seg</Box>
       </Grid>
       <Grid item xs={12 / 7}>
-        <Box
-          sx={{
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-          }}
-        >
-          Ter
-        </Box>
+        <Box sx={cssWeekDay}>Ter</Box>
       </Grid>
       <Grid item xs={12 / 7}>
-        <Box
-          sx={{
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-          }}
-        >
-          Qua
-        </Box>
+        <Box sx={cssWeekDay}>Qua</Box>
       </Grid>
       <Grid item xs={12 / 7}>
-        <Box
-          sx={{
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-          }}
-        >
-          Qui
-        </Box>
+        <Box sx={cssWeekDay}>Qui</Box>
       </Grid>
       <Grid item xs={12 / 7}>
-        <Box
-          sx={{
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-          }}
-        >
-          Sex
-        </Box>
+        <Box sx={cssWeekDay}>Sex</Box>
       </Grid>
       <Grid item xs={12 / 7}>
-        <Box
-          sx={{
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-          }}
-        >
-          Sáb
-        </Box>
+        <Box sx={cssWeekDay}>Sáb</Box>
       </Grid>
       <Grid item xs={12 / 7}>
-        <Box
-          sx={{
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-          }}
-        >
-          Dom
-        </Box>
+        <Box sx={cssWeekDay}>Dom</Box>
       </Grid>
     </Grid>
   );
